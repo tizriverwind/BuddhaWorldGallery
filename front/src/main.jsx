@@ -1,10 +1,17 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
+import { BrowerRouter } from "react-router-dom"
 import App from "./App.jsx";
+//import "bootstrap/dist/css/boostrap.min.css";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
-    <App />
+    <BrowerRouter>
+      <App />
+    </BrowerRouter>
   </React.StrictMode>,
+  document.getElementById("root")
+
 );
