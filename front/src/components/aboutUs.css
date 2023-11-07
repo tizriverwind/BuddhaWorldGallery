@@ -1,0 +1,24 @@
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.about-section h2 {
+  color: purple;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1em;
+  max-width: 600px;
+}

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Gallery from './components/Gallery';
 import ImageDetail from "./components/ImageDetail";
 import Navbar from "./components/Navbar";
+import Contact from "./components/Contact";
+import AboutUs from "./components/AboutUs";
 import './App.css';
 
 function App() {
@@ -51,23 +53,22 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <div>
-        <br></br>
-        <strong><h1>Buddha World Gallery</h1></strong>
-        <br></br>
-        </div>
-        <br></br>
+        <div />
+        <br />
+        <strong><h1 className="title">Buddha World Gallery</h1></strong>
+        <br />
+        <br />
         <Routes> 
           <Route path="/" element={<Gallery galleryImages={galleryImages} />} />
           <Route path="/image/:imageId" element={<ImageDetail galleryImages={galleryImages} />} />
-          
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about-us" element={<AboutUs />} />
         </Routes>
       </Router>
 
       
 
       <br /><br />
-
       <br /><br />
       <div>-- @2023 Created by Xiaolin Liu and Huiqin Hu --</div>
     </div>
