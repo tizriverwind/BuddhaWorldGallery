@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logoImage from "/src/assets/images/BWG-logo.png";
+import logoImage from "/src/assets/webImages/BWG-logo.png";
 import "./Navbar.css"; 
 
 const Navbar = () => {
