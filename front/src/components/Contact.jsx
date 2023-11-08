@@ -23,8 +23,8 @@ function Contact() {
           <input type="email" id="email" name="email" />
         </div>
         <div className="form-group">
-          <label htmlFor="comment">Comment:</label>
-          <textarea id="comment" name="comment"></textarea>
+          <label htmlFor="message">Message:</label>
+          <textarea id="message" name="message"></textarea>
         </div>
         <div>
           <button type="submit">Submit</button>

@@ -5,49 +5,33 @@ import ImageDetail from "./components/ImageDetail";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import AboutUs from "./components/AboutUs";
+//import commentsRouter from "/routes/commentsRouter";
+//import imagesRouter from "/routes/imageRouter";
 import './App.css';
+import { useEffect, useState } from "react";
 
 function App() {
 
-  const galleryImages = [ // will need to replace all these photo urls
-    {
-      img: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      img: "https://images.pexels.com/photos/3861458/pexels-photo-3861458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/1712/sunglasses-apple-iphone-desk.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
+  const [galleryImages, setGalleryImages] = useState([]) 
 
-    {
-      img: 'https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
-    },
-    {
-      img: "https://images.pexels.com/photos/3861458/pexels-photo-3861458.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/1194713/pexels-photo-1194713.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    },
-    {
-      img: "https://images.pexels.com/photos/1712/sunglasses-apple-iphone-desk.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    }
-  ]
+  useEffect(() => {
+    // Fetch the image data when the component mounts
+    fetch("/api/images")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setGalleryImages(data); // Update the state with the fetched image data
+      })
+      .catch((error) => {
+        // Handel errors, but possibly using another piece of state to display an error message?
+        console.error("Error fetching images:", error);
+      });
+  }, []);
+
 
   return (
     <div className="App">
@@ -55,12 +39,12 @@ function App() {
         <Navbar />
         <div />
         <br />
-        <strong><h1 className="title">Buddha World Gallery</h1></strong>
+        <h1 className="title">Buddha World Gallery</h1>
         <br />
         <br />
         <Routes> 
           <Route path="/" element={<Gallery galleryImages={galleryImages} />} />
-          <Route path="/image/:imageId" element={<ImageDetail galleryImages={galleryImages} />} />
+          <Route path="/image/:imageId" element={<ImageDetail galleryImages/>} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about-us" element={<AboutUs />} />
         </Routes>
