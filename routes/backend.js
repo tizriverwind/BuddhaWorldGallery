@@ -2,8 +2,8 @@
 import express from "express";
 import { MongoClient, ObjectId } from "mongodb";
 
-// Replace with your actual MongoDB URI and database name
-const uri = "YOUR_MONGO_CONNECTION_STRING";
+// Need to figure out MongoDB URI and connection to MongoClient
+const uri = "YOUR_MONGO_CONNECTION_STRING"; 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const router = express.Router();

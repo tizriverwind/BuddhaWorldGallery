@@ -5,8 +5,7 @@ import ImageDetail from "./components/ImageDetail";
 import Navbar from "./components/Navbar";
 import Contact from "./components/Contact";
 import AboutUs from "./components/AboutUs";
-//import commentsRouter from "/routes/commentsRouter";
-//import imagesRouter from "/routes/imageRouter";
+
 import './App.css';
 import { useEffect, useState } from "react";
 
@@ -14,23 +13,11 @@ function App() {
 
   const [galleryImages, setGalleryImages] = useState([]) 
 
-  useEffect(() => {
-    // Fetch the image data when the component mounts
-    fetch("/api/images")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        setGalleryImages(data); // Update the state with the fetched image data
-      })
-      .catch((error) => {
-        // Handel errors, but possibly using another piece of state to display an error message?
-        console.error("Error fetching images:", error);
-      });
-  }, []);
+  <div id="galleryImagesDisplay" class="galleryImages">
+     <img height="400px"
+      src="/src/assets/${image}"
+      class="gallery-img"
+      alt="aam1.jpg"
 
 
   return (
