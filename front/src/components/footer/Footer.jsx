@@ -6,10 +6,10 @@ const Footer = () => {
         <div className="footer-links_contact">
           <h4>Socials</h4>
           <p>
-            <a href="">Twitter</a>
+            <a href="">YouTube</a>
           </p>
           <p>
-            <a href="">LinkedIn</a>
+            <a href="">Instagram</a>
           </p>
           <p>
             <a href="">Facebook</a>
