@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "cd front && npm install && npm run build",
-    "start": "node ./bin/www.js",
+    "start": "node ./node_modules/nodemon/bin/nodemon.js ./bin/www.js",
     "lint": "eslint . --ext .js,.jsx",
     "format": "prettier --write ."
   },
@@ -29,6 +29,7 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.0.3"
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0"
   }
 }

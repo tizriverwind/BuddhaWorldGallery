@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./gallery.css";
 import { useNavigate } from "react-router-dom";
-import SearchBar from "../searchbar/Searchbar";
 
 const Gallery = ({ galleryImages }) => {
   return (
