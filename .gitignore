@@ -1,7 +1,7 @@
 # Dependency directories
-node_modules/
+/node_modules
 git
-cool-app/
+/cool-app
 # Output of 'npm pack'
 *.tgz
 
