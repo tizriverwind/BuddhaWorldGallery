@@ -1,5 +1,5 @@
 import express from "express";
-import { myDB } from "../db/myMongoDB.js";
+import myDB from "../db/myMongoDB.js";
 
 const router = express.Router();
 

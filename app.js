@@ -18,7 +18,6 @@ import indexRouter from "./routes/index.js";
 let app = express();
 
 app.use(logger("dev"));
-app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -29,8 +28,8 @@ app.use("/", indexRouter);
 //app.use("/api/images", imagesRouter); // use the images router
 //app.use("/api/comments", commentsRouter);
 
-app.listen(3000, () => {
-  console.log("Server running normally on port 3000");
-});
+// app.listen(3000, () => {
+//   console.log("Server running normally on port 3000");
+// });
 
 export default app;

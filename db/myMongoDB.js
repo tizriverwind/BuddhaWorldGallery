@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { MongoClient, ObjectId } from "mongodb";
+import { MongoClient } from "mongodb";
 
 function MyMongoDB() {
   const myDB = {};
