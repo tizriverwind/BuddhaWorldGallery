@@ -1,28 +1,34 @@
-import { Link } from "react-router-dom";
-import logoImage from "/src/assets/buddha_logo.png";
-import "./Navbar.css";
-
-const Navbar = () => {
+import PropTypes from "prop-types";
+import "./navbar.css";
+import { Link, useMatch, useResolvedPath } from "react-router-dom";
+export default function Navbar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          <img src={logoImage} alt="BWG logo" />
-        </Link>
-        <div className="navbar-nav">
-          <Link to="/" className="nav-item nav-link">
-            Home
-          </Link>
-          <Link to="/contact" className="nav-item nav-link">
-            Contact
-          </Link>
-          <Link to="/about-us" className="nav-item nav-link">
-            About Us
-          </Link>
-        </div>
-      </div>
+    <nav className="nav">
+      <Link to="/" className="site-title">
+        BuddhaGallery
+      </Link>
+      <ul>
+        <CustomLink to="/Gallery">Gallery</CustomLink>
+        <CustomLink to="/AboutUs">About Us</CustomLink>
+        <CustomLink to="/Contact">Contact</CustomLink>
+      </ul>
     </nav>
   );
-};
+}
 
-export default Navbar;
+function CustomLink({ to, children, ...props }) {
+  const resolvedPath = useResolvedPath(to);
+  const isActive = useMatch({ path: resolvedPath.pathname, end: true });
+  return (
+    <li className={isActive ? "active" : ""}>
+      <Link to={to} {...props}>
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+CustomLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
