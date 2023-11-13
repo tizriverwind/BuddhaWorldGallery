@@ -11,5 +11,6 @@ git
 .env.test.local
 .env.production.local
 .env.local
+config.env
 
 **/.DS_Store
