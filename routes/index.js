@@ -1,9 +1,16 @@
-var express = require("express");
-var router = express.Router();
+import express from "express";
+import { myDB } from "../db/myMongoDB.js";
 
-/* GET home page. */
-router.get("/", function (req, res, next) {
-  res.render("index", { title: "Express" });
+const router = express.Router();
+
+router.get("/artifacts", async (req, res) => {
+  try {
+    const buddha = await myDB.getBuddha();
+    res.json(buddha);
+  } catch (error) {
+    console.error("Error fetchiing artifacts:", error);
+    res.status(500).json({ error: "Failed to fetch artifacts" });
+  }
 });
 
-module.exports = router;
+export default router;
