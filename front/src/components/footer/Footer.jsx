@@ -4,6 +4,9 @@ const Footer = () => {
     <div className="footer section__padding">
       <div className="footer-links">
         <div className="footer-links_contact">
+          <h4>Made with 🧡</h4>
+        </div>
+        <div className="footer-links_contact">
           <h4>Socials</h4>
           <p>
             <a href="">YouTube</a>

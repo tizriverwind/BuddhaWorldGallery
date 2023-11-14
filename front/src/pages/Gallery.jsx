@@ -1,14 +1,49 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Navbar from "../components/navbar/Navbar";
-import Gallery from "../components/gallery/Gallery";
+import PhotosGallery from "../components/PhotosGallery";
+import Footer from "../components/footer/Footer";
 
-const GalleryPage = () => {
+function GalleryPage() {
+  let [photos, setPhotos] = useState([]);
+
+  async function testBack() {
+    console.log("Testing back...");
+    const response = await fetch("api/buddha");
+    const data = await response.json();
+    console.log("Got Data!", data);
+
+    setPhotos(data);
+    console.log("Render App photos=", data);
+  }
+
+  useEffect(() => {
+    console.log("App useEffect called");
+    testBack();
+
+    return () => {
+      //cleanup for the effect
+    };
+  }, []);
+
   return (
     <div>
       <Navbar />
-      <Gallery />
+      <h1>Buddha World Gallery</h1>
+      <PhotosGallery photos={photos} />
+      <Footer />
     </div>
   );
-};
+}
 
 export default GalleryPage;
+
+// const GalleryPage = () => {
+//   return (
+//     <div>
+//       <Navbar />
+//       <PhotosGallery />
+//     </div>
+//   );
+// };
+
+// export default GalleryPage;
