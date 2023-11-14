@@ -1,23 +1,21 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
 
-export function ButtonVote({ name }) {
+export default function ButtonVote() {
   let [votes, setVotes] = useState(0);
 
   function onClick() {
     setVotes(votes + 1);
-    console.log(`Voted for ${name} votes=${votes}`);
+    console.log(`votes=${votes}`);
   }
 
-  console.log("render ButtonVote", name, votes);
+  console.log("render ButtonVote", votes);
   return (
     <div>
       <button className="btn btn-primary mb-2" onClick={onClick}>
-        Vote for {name}
+        Vote for it
       </button>
-      <output>
-        {name} has {votes} votes
-      </output>
+      <output>This artifact currently has {votes} votes</output>
     </div>
   );
 }
