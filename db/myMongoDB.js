@@ -1,46 +1,34 @@
+//import "dotenv/config";
 import { MongoClient } from "mongodb";
-import dotenv from "dotenv";
 
-dotenv.config();
+function MyMongoDB() {
+  const myDB = {};
 
-const connectDB = async (selectedCollection) => {
-  const mongoUrl = process.env.MONGODB_URI;
-  const client = new MongoClient(mongoUrl);
-  await client.connect();
-  const db = await client.db("mern-auth");
-  const collection = db.collection(selectedCollection);
-  return { client, collection };
-};
+  const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
-export default connectDB;
+  function connect() {
+    const client = new MongoClient(uri);
+    const db = client.db("buddhaWorld");
+    return { client, db };
+  }
 
-// import "dotenv/config";
-// import { MongoClient } from "mongodb";
+  myDB.getBuddha = async function (query = {}) {
+    const { client, db } = connect();
 
-// function MyMongoDB() {
-//   const myDB = {};
+    try {
+      const buddha = await db
+        .collection("ListedArtifacts")
+        .find(query)
+        .toArray();
 
-//   const uri = process.env.MONGODB_URI;
+      return buddha;
+    } finally {
+      await client.close();
+    }
+  };
+  return myDB;
+}
 
-//   function connect() {
-//     const client = new MongoClient(uri);
-//     const db = client.db("ListedArtifacts");
-//     return { client, db };
-//   }
+const myDB = MyMongoDB();
 
-//   myDB.getBuddha = async function (query = {}) {
-//     const { client, db } = connect();
-
-//     try {
-//       const buddha = await db.collection("buddha").find(query).toArray();
-//       return buddha;
-//     } finally {
-//       await client.close();
-//     }
-//   };
-//   return myDB;
-// }
-
-// const myDB = MyMongoDB();
-
-// export default myDB;
+export default myDB;

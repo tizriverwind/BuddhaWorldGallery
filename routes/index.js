@@ -1,9 +1,9 @@
 import express from "express";
 import myDB from "../db/myMongoDB.js";
 
-const router = express.Router();
+let router = express.Router();
 
-router.get("/artifacts", async (req, res) => {
+router.get("/api/buddha", async function (req, res) {
   try {
     const buddha = await myDB.getBuddha();
     res.json(buddha);
