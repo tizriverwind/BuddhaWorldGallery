@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(200, 200, 177);
+  background-color:rgb(163, 160, 171);
 }
 
 .footer-links {
@@ -44,7 +44,7 @@
   font-size: 14px;
   line-height: 17px;
   font-family: var(--font-family);
-  color: #6d6868;
+  color: rgb(53, 42, 28);
 
   margin-bottom: 0.9rem;
 }
@@ -53,7 +53,7 @@
   font-size: 12px;
   line-height: 15px;
   font-family: var(--font-family);
-  color: #6d6868;
+  color: rgb(53, 42, 28);
 
   margin: 0.5rem 0;
   cursor: pointer;
@@ -69,5 +69,5 @@
   font-size: 12px;
   font-family: var(--font-family);
   line-height: 15px;
-  color: #595151;
+  color:rgb(53, 42, 28);
 }

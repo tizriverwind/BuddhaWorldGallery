@@ -8,6 +8,7 @@ export default function SearchBar({ query, setQuery }) {
   return (
     <div>
       <label className="form-label">
+      <div></div>
         Search by Dynasty (case sensitive):{" "}
         <input
           id="search"

@@ -42,11 +42,11 @@
 }
 
 .contact-word {
-  color: purple;
+  color: rgb(53, 42, 28);
 }
 
 .contact-form button {
-  background: #333;
+  background: rgb(172, 71, 47);
   color: #fff;
   border: none;
   padding: 0.8rem 1.6rem;
@@ -57,7 +57,7 @@
 }
 
 .contact-form button:hover {
-  background: #555;
+  background: rgb(53, 42, 28);
 }
 
 /* Adjustments for smaller screens */

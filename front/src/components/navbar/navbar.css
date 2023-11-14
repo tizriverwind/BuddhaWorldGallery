@@ -7,8 +7,8 @@ body {
 }
 
 .nav {
-  background-color: #7e7054;
-  color: white;
+  background-color: rgb(103, 77, 55);
+  color: whitesmoke;
   display: flex;
   justify-content: space-between;
   align-items: stretch;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { DeleteArtifact } from "./DeleteArtifact";
-import ButtonVote from "../components/ButtonVote";
+//import ButtonVote from "../components/ButtonVote";
 import Navbar from "../components/navbar/Navbar";
 
 export default function ArtifactDetail() {
