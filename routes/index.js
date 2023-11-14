@@ -47,7 +47,7 @@ router.put("/api/buddha/id/:id", async function (req, res) {
     const artifactId = req.params.id;
     const updateData = req.body;
     const result = await myDB.updateArtifact(artifactId, updateData);
-    if (result.modifiedCount === 1) {
+    if (result.matchedCount === 1) {
       res.json({ message: "Info updated successfully" });
     } else {
       res.status(404).json({ error: "Artifact not found" });

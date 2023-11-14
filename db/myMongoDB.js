@@ -62,9 +62,8 @@ function MyMongoDB() {
       const filter = { _id: new ObjectId(artifactId) };
       const update = { $set: updateData };
       const result = await artifactsCollection.updateOne(filter, update);
-
       if (result.matchedCount > 0) {
-        return await artifactsCollection.findOne(filter);
+        return result; //await artifactsCollection.findOne(filter);
       }
       return null;
     } finally {

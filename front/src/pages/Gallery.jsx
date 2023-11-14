@@ -44,7 +44,6 @@ function GalleryPage() {
 
       <SearchBar query={query} setQuery={setQuery} />
       <PhotosGallery photos={photos.filter((d) => d.dynasty.includes(query))} />
-      <Footer />
     </div>
   );
 }

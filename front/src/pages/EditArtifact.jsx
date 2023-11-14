@@ -41,7 +41,7 @@ export function EditArtifact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`/api/buddha/edit/id/${artifactId}`, {
+      const response = await fetch(`/api/buddha/id/${artifactId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
