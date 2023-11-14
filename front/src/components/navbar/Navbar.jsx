@@ -8,7 +8,7 @@ export default function Navbar() {
         BuddhaGallery
       </Link>
       <ul>
-        <CustomLink to="/Gallery">Gallery</CustomLink>
+        <CustomLink to="/">Gallery</CustomLink>
         <CustomLink to="/AboutUs">About Us</CustomLink>
         <CustomLink to="/Contact">Contact</CustomLink>
       </ul>

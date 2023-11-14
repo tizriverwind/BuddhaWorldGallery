@@ -3,6 +3,8 @@ import Navbar from "../components/navbar/Navbar";
 import PhotosGallery from "../components/PhotosGallery";
 import Footer from "../components/footer/Footer";
 import SearchBar from "../components/SearchBar";
+import { Link } from "react-router-dom";
+import "./Gallery.css";
 
 function GalleryPage() {
   const [query, setQuery] = useState("");
@@ -33,6 +35,12 @@ function GalleryPage() {
     <div>
       <Navbar />
       <h1>Buddha World Gallery</h1>
+
+      <div className="row justify-content-center">
+        <Link to="/createartifact" className="btn btn-primary btn-lg">
+          Upload an Artifact
+        </Link>
+      </div>
 
       <SearchBar query={query} setQuery={setQuery} />
       <PhotosGallery photos={photos.filter((d) => d.dynasty.includes(query))} />

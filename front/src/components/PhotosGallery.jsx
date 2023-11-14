@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function PhotosGallery({ photos }) {
   console.log("👏🏻 Render PhotosGallery photos=", photos);
@@ -8,9 +9,15 @@ function PhotosGallery({ photos }) {
       return (
         <div className="col-4" key={photo._id}>
           <div>{photo.dynasty}</div>
-          <img src={photo.image} alt={photo.name} />
+          <img src={photo.image} width={250} height={250} alt={photo.name} />
           <div>{photo.museum}</div>
           <div>{photo.name}</div>
+          <Link
+            to={`/buddha/id/${photo._id}`}
+            className="btn btn-primary btn-lg"
+          >
+            detail page
+          </Link>
         </div>
       );
     }
