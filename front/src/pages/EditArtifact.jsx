@@ -19,7 +19,7 @@ export function EditArtifact() {
           const data = await response.json();
           setArtifact(data);
         } else {
-          alert("Artifact failted to update");
+          alert("Failed to fetch artifact");
           console.error("Error fetching artifact details");
         }
       } catch (error) {
@@ -75,6 +75,7 @@ export function EditArtifact() {
             <div className="form-group mb-3">
               <input
                 type="text"
+                id="dynasty"
                 name="dynasty"
                 value={artifactData.dynasty}
                 onChange={handleChange}
@@ -82,10 +83,12 @@ export function EditArtifact() {
                 className="form-control"
               />
             </div>
+
+            <label htmlFor="imagelink">Image Link</label>
             <div className="form-group mb-3">
-              <label htmlFor="imagelink">Image Link</label>
               <input
                 type="text"
+                id="imagelink"
                 name="image"
                 value={artifactData.image}
                 onChange={handleChange}
@@ -94,10 +97,11 @@ export function EditArtifact() {
               />
             </div>
 
+            <label htmlFor="museum">Museum</label>
             <div className="form-group mb-3">
-              <label htmlFor="weblink">Museum</label>
               <input
                 type="text"
+                id="museum"
                 name="museum"
                 value={artifactData.museum}
                 onChange={handleChange}
@@ -105,9 +109,12 @@ export function EditArtifact() {
                 className="form-control"
               />
             </div>
+
+            <label htmlFor="name">Name</label>
             <div className="form-group mb-3">
-              <label htmlFor="description">Name</label>
-              <textarea
+              <input
+                type="text"
+                id="name"
                 name="name"
                 value={artifactData.name}
                 onChange={handleChange}
@@ -115,6 +122,7 @@ export function EditArtifact() {
                 className="form-control"
               />
             </div>
+
             <button type="submit" className="btn btn-primary">
               Update Artifact
             </button>

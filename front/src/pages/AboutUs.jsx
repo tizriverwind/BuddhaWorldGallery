@@ -22,6 +22,10 @@ const AboutUs = () => {
             an eclectic collection of Buddhist art from every corner of the
             globe.
           </p>
+          <p>
+            🧡Special thanks to our museum curator friend Huiwen Liu, who
+            generously provided us with her Buddha Artifacts dataset🧡
+          </p>
         </section>
 
         <section className="about-section">
