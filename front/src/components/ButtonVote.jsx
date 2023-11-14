@@ -1,24 +1,53 @@
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { useState } from "react";
 
-export default function ButtonVote() {
-  let [votes, setVotes] = useState(0);
+const ButtonVote = ({ artifactId, initialLikes }) => {
+  const [liked, setLiked] = useState(false);
+  const [likes, setLikes] = useState(initialLikes);
 
-  function onClick() {
-    setVotes(votes + 1);
-    console.log(`votes=${votes}`);
-  }
+  const ButtonVote = async () => {
+    if (!liked) {
+      const updatedLikes = likes + 1;
 
-  console.log("render ButtonVote", votes);
+      try {
+        const response = await fetch(`/api/buddha/id/${artifactId}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ like: updatedLikes }),
+        });
+
+        if (response.ok) {
+          alert("Artifact liked successfully!");
+          setLiked(true);
+          setLikes(updatedLikes);
+        } else {
+          console.error("Error updating artifact");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    }
+  };
+
+  useEffect(() => {
+    // Add any additional initialization logic here if needed
+  }, [artifactId]); // Include dependencies in the dependency array if needed
+
   return (
     <div>
-      <button className="btn btn-primary mb-2" onClick={onClick}>
-        Vote for it
+      <button onClick={ButtonVote} disabled={liked}>
+        {liked ? "Liked!" : "Like"}
       </button>
-      <output>This artifact currently has {votes} votes</output>
+      <span>Likes: {likes}</span>
     </div>
   );
-}
-ButtonVote.propTypes = {
-  name: PropTypes.string.isRequired,
 };
+
+ButtonVote.propTypes = {
+  artifactId: PropTypes.string.isRequired,
+  initialLikes: PropTypes.number.isRequired,
+};
+
+export default ButtonVote;

@@ -101,7 +101,6 @@ export default function ArtifactDetail() {
           <p className="card-text">{artifact.museum}</p>
 
           <div className="card-btn">
-            <ButtonVote />
             <Link
               to={`/buddha/edit/id/${artifactId}`}
               className="btn btn-secondary mx-2"

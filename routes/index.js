@@ -19,7 +19,7 @@ router.post("/api/buddha/artifact", async (req, res) => {
   const newArtifact = req.body;
   try {
     const result = await myDB.createArtifact(newArtifact);
-    res.status(201).json({ success: true, dealId: result.insertedId });
+    res.status(201).json({ success: true, artifactId: result.insertedId });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
@@ -36,7 +36,7 @@ router.get("/api/buddha/id/:id", async (req, res) => {
       res.status(404).json({ success: false, message: "Artifact not found" });
     }
   } catch (error) {
-    console.error("Error fetching deal:", error);
+    console.error("Error fetching artifact:", error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
   }
 });
@@ -58,11 +58,11 @@ router.put("/api/buddha/id/:id", async function (req, res) {
 });
 
 //deleteArtifact
-router.delete("/api/deals/id/:id", async function (req, res) {
+router.delete("/api/buddha/id/:id", async function (req, res) {
   try {
     const artifactId = req.params.id;
     const result = await myDB.deleteArtifact(artifactId);
-    if (result.dealResult.deletedCount === 1) {
+    if (result.deletedCount === 1) {
       res.json({ message: "Artifact deleted successfully" });
     } else {
       res.status(404).json({ error: "Artifact not found" });
