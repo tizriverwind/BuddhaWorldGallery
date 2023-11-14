@@ -72,4 +72,38 @@ router.delete("/api/buddha/id/:id", async function (req, res) {
   }
 });
 
+router.post("/api/buddha/id/:artifactId/comments", async (req, res) => {
+  try {
+    const { artifactlId } = req.params;
+    const comment = { ...req.body, artifactlId };
+    const result = await myDB.createComment(comment);
+    res.status(201).json(result);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get("/api/buddha/id/:artifactId/comments", async (req, res) => {
+  try {
+    const { artifactId } = req.params;
+    const comments = await myDB.getCommentsByArtifactId(artifactId);
+    res.json(comments);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.delete("/api/buddha/comments/:commentId", async (req, res) => {
+  try {
+    const { commentId } = req.params;
+    const result = await myDB.deleteComment(commentId);
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: "Comment not found" });
+    }
+    res.json({ message: "Comment deleted successfully" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 export default router;
