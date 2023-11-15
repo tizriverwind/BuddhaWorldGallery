@@ -102,7 +102,7 @@ router.get("/api/buddha/id/:artifactId/comments", async (req, res) => {
 //deleteComment
 router.delete("/api/buddha/comments/:commentId", async (req, res) => {
   try {
-    const commentId = req.params.id;
+    const { commentId } = req.params;
     const result = await myDB.deleteComment(commentId);
     if (result.deletedCount === 0) {
       return res.status(404).json({ error: "Comment not found" });
