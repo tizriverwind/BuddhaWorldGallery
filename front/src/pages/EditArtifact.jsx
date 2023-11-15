@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
 
 export function EditArtifact() {
   const [artifactData, setArtifact] = useState({
@@ -68,6 +69,7 @@ export function EditArtifact() {
 
   return (
     <div className="container mt-5">
+      <Navbar/>
       <div className="row justify-content-center">
         <div className="col-md-6">
           <h1>Edit Artifact</h1>
