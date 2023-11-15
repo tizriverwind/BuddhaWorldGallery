@@ -1,5 +1,26 @@
 import "./footer.css";
+import { useEffect, useState } from "react";
+
 const Footer = () => {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener(`scroll`, () => {
+      if (window.scrollY > 400) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    });
+  }, []);
+
+  function goTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
     <div className="footer section__padding">
       <div className="footer-links">
@@ -28,6 +49,11 @@ const Footer = () => {
       <div className="footer-copyright">
         <p>@2023 BuddhaWorldGallery. All rights reserved</p>
       </div>
+      {showTopBtn && (
+        <div className="go-top" onClick={goTop}>
+          Back to Top
+        </div>
+      )}
     </div>
   );
 };

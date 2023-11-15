@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:rgb(163, 160, 171);
+  background-color: rgb(163, 160, 171);
 }
 
 .footer-links {
@@ -69,5 +69,23 @@
   font-size: 12px;
   font-family: var(--font-family);
   line-height: 15px;
-  color:rgb(53, 42, 28);
+  color: rgb(53, 42, 28);
+}
+
+.go-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgb(163, 160, 171); /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.go-top:hover {
+  background-color: #0056b3; /* Set your desired hover background color */
 }
