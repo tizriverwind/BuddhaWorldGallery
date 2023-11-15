@@ -12,7 +12,7 @@ Please refer to the links below for more details on the project
 Deployed Site:
 Walkthrough Video:
 Slides: https://docs.google.com/presentation/d/e/2PACX-1vSb4RggmRkXw76P1Rx_Kq70ptaCaZxrPqxt4rqLPdXJSP0fls_F35BlBvAqJqE51zVl9NtKloT6a_yX/pub?start=false&loop=false&delayms=3000
-Design Document: (./design_document.md) or https://docs.google.com/document/d/e/2PACX-1vQHYs7py9owj68xlcnBfwh52m2hDdlL9jmwJdaWHQc8R2U1sV0LAG57MA02Xi6EbsPiy1uFmeNt1k3r/pub
+Design Document: (./design_document.md)
 Class Link: https://johnguerra.co/classes/webDevelopment_fall_2023/
 
 ## Disclaimer
