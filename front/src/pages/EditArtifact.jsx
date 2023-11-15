@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import "./editArtifact.css";
 
 export function EditArtifact() {
   const [artifactData, setArtifact] = useState({

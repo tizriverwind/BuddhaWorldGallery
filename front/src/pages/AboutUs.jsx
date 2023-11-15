@@ -1,4 +1,4 @@
-import "./AboutUs.css";
+import "./aboutUs.css";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 

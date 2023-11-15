@@ -4,7 +4,7 @@ import PhotosGallery from "../components/PhtotGallery/PhotosGallery";
 import Footer from "../components/footer/Footer";
 import SearchBar from "../components/SearchBar";
 import { Link } from "react-router-dom";
-import "./Gallery.css";
+import "./gallery.css";
 
 function GalleryPage() {
   const [query, setQuery] = useState("");
