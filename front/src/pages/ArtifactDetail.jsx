@@ -9,6 +9,8 @@ export default function ArtifactDetail() {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
   const { artifactId } = useParams();
+  const [editingCommentId, setEditingCommentId] = useState(null);
+  const [editedCommentText, setEditedCommentText] = useState("");
 
   useEffect(() => {
     // fetch artifacts data
@@ -92,6 +94,42 @@ export default function ArtifactDetail() {
     }
   };
 
+  const startEditingComment = (commentId, commentText) => {
+    setEditingCommentId(commentId);
+    setEditedCommentText(commentText);
+  };
+
+  const cancelEditingComment = () => {
+    setEditingCommentId(null);
+    setEditedCommentText("");
+  };
+
+  const updateComment = async (commentId) => {
+    try {
+      const response = await fetch(`/api/buddha/comments/${commentId}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: editedCommentText }),
+      });
+      if (response.ok) {
+        const updatedResponse = await fetch(
+          `/api/buddha/id/${artifactId}/comments`
+        );
+        if (updatedResponse.ok) {
+          const updatedData = await updatedResponse.json();
+          setComments(updatedData);
+        }
+
+        setEditingCommentId(null);
+        setEditedCommentText("");
+      }
+    } catch (error) {
+      console.error("Error updating comment:", error);
+    }
+  };
+
   return (
     <div className="container my-5">
       <Navbar />
@@ -118,10 +156,34 @@ export default function ArtifactDetail() {
             <h2>Comments</h2>
             {comments.map((comment) => (
               <div key={comment._id}>
-                <p>{comment.text}</p>
-                <button onClick={() => deleteComment(comment._id)}>
-                  Delete Comment
-                </button>
+                {editingCommentId === comment._id ? (
+                  <>
+                    <textarea
+                      value={editedCommentText}
+                      onChange={(e) => setEditedCommentText(e.target.value)}
+                      placeholder="Edit your comment here"
+                      required
+                    />
+                    <button onClick={() => updateComment(comment._id)}>
+                      Update Comment
+                    </button>
+                    <button onClick={cancelEditingComment}>Cancel</button>
+                  </>
+                ) : (
+                  <>
+                    <p>{comment.text}</p>
+                    <button onClick={() => deleteComment(comment._id)}>
+                      Delete Comment
+                    </button>
+                    <button
+                      onClick={() =>
+                        startEditingComment(comment._id, comment.text)
+                      }
+                    >
+                      Edit Comment
+                    </button>
+                  </>
+                )}
               </div>
             ))}
             <div className="comment-form">

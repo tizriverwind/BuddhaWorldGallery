@@ -15,6 +15,19 @@ Slides:
 Design Document: (./design_document.md)
 Class Link: https://johnguerra.co/classes/webDevelopment_fall_2023/
 
+## Disclaimer
+
+Some data in this project are synthetic fictitious data and for educational and demonstration purposes only
+
+## Functionalities / How to Use
+
+###
+
+- CRUD Operations on Gallery:
+  - Shows all the artifacts in our dataset. Navigation bar creates option to read up about us or contact us
+- Create an Artifact
+  - User is able to upload information on new artifacts
+
 ## Installation
 
 To set up BuddhaWorldGallery, you will need the following:
