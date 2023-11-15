@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { DeleteArtifact } from "./DeleteArtifact";
-//import ButtonVote from "../components/ButtonVote";
 import Navbar from "../components/navbar/Navbar";
+import "./ArtifactDetail.css";
 
 export default function ArtifactDetail() {
   const [artifact, setArtifact] = useState(null);
@@ -11,6 +11,7 @@ export default function ArtifactDetail() {
   const { artifactId } = useParams();
 
   useEffect(() => {
+    // fetch artifacts data
     async function fetchArtifact() {
       try {
         const response = await fetch(`/api/buddha/id/${artifactId}`);
@@ -26,6 +27,7 @@ export default function ArtifactDetail() {
     }
     fetchArtifact();
 
+    //  fetch comment data
     async function fetchComments() {
       try {
         const response = await fetch(`/api/buddha/id/${artifactId}/comments`);
@@ -44,7 +46,8 @@ export default function ArtifactDetail() {
     return <div>Loading...</div>;
   }
 
-  const submitComment = async () => {
+  const submitComment = async (e) => {
+    e.preventDefault();
     if (newComment) {
       try {
         const response = await fetch(`/api/buddha/id/${artifactId}/comments`, {
@@ -59,8 +62,10 @@ export default function ArtifactDetail() {
           const updatedResponse = await fetch(
             `/api/buddha/id/${artifactId}/comments`
           );
+          console.log(updatedResponse);
           if (updatedResponse.ok) {
             const updatedData = await updatedResponse.json();
+            console.log(updatedData);
             setComments(updatedData);
           }
 
@@ -111,8 +116,8 @@ export default function ArtifactDetail() {
           </div>
           <section className="comment-section">
             <h2>Comments</h2>
-            {comments.map((comment, index) => (
-              <div key={index}>
+            {comments.map((comment) => (
+              <div key={comment._id}>
                 <p>{comment.text}</p>
                 <button onClick={() => deleteComment(comment._id)}>
                   Delete Comment
@@ -127,7 +132,9 @@ export default function ArtifactDetail() {
                   placeholder="Write your comment here"
                   required
                 />
-                <button onClick={submitComment}>Submit Comment</button>
+                <button onClick={(e) => submitComment(e)}>
+                  Submit Comment
+                </button>
               </form>
             </div>
           </section>

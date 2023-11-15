@@ -3,7 +3,6 @@ import { MongoClient, ObjectId } from "mongodb";
 
 function MyMongoDB() {
   const myDB = {};
-
   const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
   function connect() {
@@ -63,7 +62,7 @@ function MyMongoDB() {
       const update = { $set: updateData };
       const result = await artifactsCollection.updateOne(filter, update);
       if (result.matchedCount > 0) {
-        return result; //await artifactsCollection.findOne(filter);
+        return result;
       }
       return null;
     } finally {
@@ -81,11 +80,59 @@ function MyMongoDB() {
       const result = await artifactsCollection.deleteOne(filter);
       return { deletedCount: result.deletedCount };
     } finally {
-      console.log("db closing connction");
+      console.log("db closing connection");
       client.close();
     }
   };
 
+  myDB.createComment = async (comment) => {
+    const { client, db } = connect();
+    const commentsCollection = db.collection("Comments");
+
+    try {
+      const result = await commentsCollection.insertOne(comment);
+      return result;
+    } finally {
+      console.log("db closing connection");
+      client.close();
+    }
+  };
+
+  myDB.getCommentsByArtifactId = async (artifactId) => {
+    const { client, db } = connect();
+    const commentsCollection = db.collection("Comments");
+
+    try {
+      const comments = await commentsCollection.find({ artifactId }).toArray();
+      return comments;
+    } finally {
+      console.log("db closing connection");
+      client.close();
+    }
+  };
+
+  myDB.deleteComment = async (commentId) => {
+    const { client, db } = connect();
+    const commentsCollection = db.collection("Comments");
+
+    try {
+      const result = await commentsCollection.deleteOne({
+        _id: new ObjectId(commentId),
+      });
+      return { deletedCount: result.deletedCount };
+    } finally {
+      console.log("db closing connection");
+      client.close();
+    }
+  };
+
+  myDB.closeConnection = async () => {
+    if (client.isConnected()) {
+      await client.close();
+    }
+  };
+
+  myDB.connect = connect;
   return myDB;
 }
 

@@ -40,6 +40,7 @@ export function EditArtifact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("YOOOO");
     try {
       const response = await fetch(`/api/buddha/id/${artifactId}`, {
         method: "PUT",

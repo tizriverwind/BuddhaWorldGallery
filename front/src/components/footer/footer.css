@@ -76,8 +76,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: rgb(163, 160, 171); /* Set your desired background color */
-  color: #fff; /* Set your desired text color */
+  background-color: rgb(103, 77, 55);
+  color: #fff;
   padding: 10px;
   border-radius: 50%;
   cursor: pointer;
@@ -87,5 +87,5 @@
 }
 
 .go-top:hover {
-  background-color: #0056b3; /* Set your desired hover background color */
+  background-color: rgb(224, 218, 205);
 }

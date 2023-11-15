@@ -68,41 +68,48 @@ router.delete("/api/buddha/id/:id", async function (req, res) {
       res.status(404).json({ error: "Artifact not found" });
     }
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "Unable to delete artifact" });
   }
 });
 
+//createComment
 router.post("/api/buddha/id/:artifactId/comments", async (req, res) => {
   try {
-    const { artifactlId } = req.params;
+    const artifactlId = req.params.id;
     const comment = { ...req.body, artifactlId };
+    console.log(comment);
     const result = await myDB.createComment(comment);
     res.status(201).json(result);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.log(err);
+    res.status(500).json({ error: "Unable to create Comment" });
   }
 });
 
+//getComments
 router.get("/api/buddha/id/:artifactId/comments", async (req, res) => {
   try {
-    const { artifactId } = req.params;
+    const artifactId = req.params.id;
     const comments = await myDB.getCommentsByArtifactId(artifactId);
+    console.log(comments);
     res.json(comments);
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.log(err);
+    res.status(500).json({ error: "Unable to get comment" });
   }
 });
 
+//deleteComment
 router.delete("/api/buddha/comments/:commentId", async (req, res) => {
   try {
-    const { commentId } = req.params;
+    const commentId = req.params.id;
     const result = await myDB.deleteComment(commentId);
     if (result.deletedCount === 0) {
       return res.status(404).json({ error: "Comment not found" });
     }
     res.json({ message: "Comment deleted successfully" });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(500).json({ error: "Unable to delete comment" });
   }
 });
 
