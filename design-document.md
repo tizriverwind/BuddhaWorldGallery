@@ -8,21 +8,15 @@ BuddhaWorldGallery is an online website for art lovers to be able to browse, sea
 
 1. The Art Enthusiast:
 
-- Looks for a visually compelling and informative experience.
-- Wants the ability to learn about the art's history and context.
-- Interested in high-resolution images and potential acquisition information.
+Amy is an art enthusiast. She is looking for a visually compelling and informative experience. She wants the ability to learn about the art's history and context. She is interested in high-resolution images and potential acquisition information.
 
 2. The Researcher:
 
-- Requires access to detailed historical context and educational material.
-- Seeks functionalities for data export and integration with other academic platforms.
-- Values the ability to find comprehensive information on the provenance and material of each piece.
+David needs access to detailed historical context and educational material. He seeks functionalities for data export and integration with other academic platforms. He values the ability to find comprehensive information on the provenance and material of each piece.
 
 3. The Casual Browser:
 
-- Prefers an easy-to-navigate platform for enjoyable and educational browsing.
-- Enjoys guided tours and simplified explanations of art pieces.
-- Appreciates user-friendly interfaces that enhance the learning experience.
+Ronald prefers an easy-to-navigate platform for enjoyable and educational browsing. He enjoys guided tours and simplified explanations of art pieces. He appreciates user-friendly interfaces that enhance the learning experience.
 
 ## Functionalities and work division:
 

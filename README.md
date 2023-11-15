@@ -22,6 +22,16 @@ Class Link: https://johnguerra.co/classes/webDevelopment_fall_2023/
 
 Some data in this project are synthetic fictitious data and for educational and demonstration purposes only
 
+## Project Objective
+
+1. Create an online gallery to showcase important buddha artifacts across the world
+
+2. Allow Buddhist art lovers to search up artifacts by their historical time periods (dynasty)
+
+3. Allow art lovers across the world to curate this database together - users can “read” the current database through our online gallery, they can also create, update and delete data from our dataset, helping us curate this dataset
+
+4. Allow art lovers across the world to comment below their favorite artifacts - comments could be created, read, updated and deleted
+
 ## Screenshots
 
 Main page: gallery
