@@ -50,3 +50,24 @@ Delete: users can delete their comment
 Like: users can give thumbs up to a comment they like
 
 Frontend CSS / page design - @Xiaolin Liu
+
+Mockups:
+Main page: gallery
+
+
+
+Image detail page
+
+
+Upload artifact
+
+
+About us
+
+
+Contact
+
+
+Footer
+
+

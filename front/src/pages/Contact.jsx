@@ -1,5 +1,6 @@
 import "./Contact.css";
 import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 function Contact() {
   return (
@@ -38,6 +39,7 @@ function Contact() {
           </div>
         </form>
       </div>
+      <Footer/>
     </div>
   );
 }

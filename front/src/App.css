@@ -44,3 +44,17 @@
 .title {
   color:rgb(53, 42, 28);
 }
+
+.main-container {
+  width: 100%;
+  min-height: 100vh; /* Optional: to make sure it takes at least the full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* This helps in pushing the footer to the bottom if the content is not enough */
+}
+
+/* Footer styles */
+.footer {
+  width: 100%;
+  /* Other styling for your footer */
+}

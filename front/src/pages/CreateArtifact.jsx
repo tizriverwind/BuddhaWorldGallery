@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 import "./createArtifact.css";
 
 export default function CreateArtifact() {
@@ -45,72 +46,74 @@ export default function CreateArtifact() {
   };
 
   return (
-    <div className="container mt-5">
+      <div className="container mt-5">
       <Navbar />
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <h2>Upload New Artifact</h2>
-          <br/>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="dynasty">Dynasty</label>
-            <div className="form-group mb-3">
-              <input
-                type="text"
-                id="dynasty"
-                name="dynasty"
-                value={artifactData.dynasty}
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
-            </div>
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <h2>Upload New Artifact</h2>
+            <br/>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="dynasty">Dynasty</label>
+              <div className="form-group mb-3">
+                <input
+                  type="text"
+                  id="dynasty"
+                  name="dynasty"
+                  value={artifactData.dynasty}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                />
+              </div>
 
-            <label htmlFor="imagelink">Image Link</label>
-            <div className="form-group mb-3">
-              <input
-                type="text"
-                id="imagelink"
-                name="image"
-                value={artifactData.image}
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
-            </div>
+              <label htmlFor="imagelink">Image Link</label>
+              <div className="form-group mb-3">
+                <input
+                  type="text"
+                  id="imagelink"
+                  name="image"
+                  value={artifactData.image}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                />
+              </div>
 
-            <label htmlFor="museum">Museum</label>
-            <div className="form-group mb-3">
-              <input
-                type="text"
-                id="museum"
-                name="museum"
-                value={artifactData.museum}
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
-            </div>
+              <label htmlFor="museum">Museum</label>
+              <div className="form-group mb-3">
+                <input
+                  type="text"
+                  id="museum"
+                  name="museum"
+                  value={artifactData.museum}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                />
+              </div>
 
-            <label htmlFor="name">Name</label>
-            <div className="form-group mb-3">
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={artifactData.name}
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
-            </div>
+              <label htmlFor="name">Name</label>
+              <div className="form-group mb-3">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={artifactData.name}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                />
+              </div>
 
-            <button type="submit" className="btn btn-primary">
-              Upload Artifact
-            </button>
-          </form>
+              <button type="submit" className="btn btn-primary">
+                Upload Artifact
+              </button>
+            </form>
+          </div>
         </div>
+        <Footer />
       </div>
-    </div>
+
   );
 }
 

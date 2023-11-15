@@ -5,14 +5,11 @@ import ArtifactDetail from "./pages/ArtifactDetail";
 import { EditArtifact } from "./pages/EditArtifact";
 import CreateArtifact from "./pages/CreateArtifact";
 import GalleryPage from "./pages/Gallery";
-import Footer from "./components/footer/Footer";
 import "./App.css";
-//import Navbar from "./components/navbar/Navbar";
 
 export default function App() {
   return (
-    <div>
-      {/* <Navbar /> */}
+    <div className="main-container">
       <Router>
         <Routes>
           <Route path="/" element={<GalleryPage category="/" />} />
@@ -26,7 +23,6 @@ export default function App() {
           <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
       </Router>
-      <Footer />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 export function EditArtifact() {
   const [artifactData, setArtifact] = useState({
@@ -131,6 +132,9 @@ export function EditArtifact() {
             </button>
           </form>
         </div>
+      </div>
+      <div>
+      <Footer />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import "./AboutUs.css";
 import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 const AboutUs = () => {
   return (
@@ -7,7 +8,7 @@ const AboutUs = () => {
       <Navbar />
 
       <div className="about-container">
-        <section className="about-section">
+        <div className="about-section">
           <h2>🪬The Enlightened Origins</h2>
           <p>
             Our gallery&apos;s story unfolds from a tapestry woven with threads
@@ -26,9 +27,9 @@ const AboutUs = () => {
             🧡Special thanks to our museum curator friend Huiwen Liu, who
             generously provided us with her Buddha Artifacts dataset🧡
           </p>
-        </section>
+        </div>
 
-        <section className="about-section">
+        <div className="about-section">
           <h2> 🕉️When Om-Mani-Padme-Hum meets Dot-Com</h2>
           <p>
             Our mission is to offer an enlightening experience that transcends
@@ -48,9 +49,9 @@ const AboutUs = () => {
             and appropriation, they echo the timeless Buddhist teachings of
             serenity and the liberating power of release.
           </p>
-        </section>
+        </div>
 
-        <section className="about-section">
+        <div className="about-section">
           <h2> 🧘🏻🧘🏻‍♀️The Guardians of the Gallery</h2>
           <p>
             Our gallery is more than walls and webpages—it&apos;s a gathering of
@@ -67,8 +68,9 @@ const AboutUs = () => {
             enlightenment with a digital twist, sharing the profound chill of
             the Buddha beat by beat—commercial-free, as the ancients intended.
           </p>
-        </section>
+        </div>
       </div>
+      <Footer/>
     </div>
   );
 };

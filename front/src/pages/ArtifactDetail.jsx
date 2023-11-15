@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { DeleteArtifact } from "./DeleteArtifact";
 import Navbar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 import "./artifactDetail.css";
 
 export default function ArtifactDetail() {
@@ -203,6 +204,7 @@ export default function ArtifactDetail() {
           </section>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }

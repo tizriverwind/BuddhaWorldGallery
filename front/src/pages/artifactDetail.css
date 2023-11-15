@@ -45,6 +45,11 @@ h2 {
   background-color: rbg(110,106,102);
 }
 
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
 /* Comment section styles */
 .comment-section {
   margin-top: 20px;

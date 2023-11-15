@@ -12,6 +12,7 @@ label {
 }
 
 .form-group {
+  width: 100%;
   display: flex;
   align-items: flex;
   margin-bottom: 1rem; /* Add space between each form group */
@@ -20,7 +21,10 @@ label {
 .form-control {
   padding: 0.375rem 0.75rem; 
   margin-top: 0.375rem; /* Space between label and input */
-  width: 100%; /* Full width */
-  max-width: 500px; /* Maximum width, adjust as necessary */
+  max-width: 1280px; /* Maximum width, adjust as necessary */
  
+}
+
+.container.mt-5 {
+  width: 1280px;
 }
