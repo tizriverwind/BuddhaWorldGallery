@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import "./searchBar.css";
 
 export default function SearchBar({ query, setQuery }) {
   function onInput(evt) {
