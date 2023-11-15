@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import "./PhotoGallery.css";
 
 function PhotosGallery({ photos }) {
   console.log("👏🏻 Render PhotosGallery photos=", photos);

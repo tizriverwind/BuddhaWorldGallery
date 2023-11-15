@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { DeleteArtifact } from "./DeleteArtifact";
 import Navbar from "../components/navbar/Navbar";
-import "./ArtifactDetail.css";
+import "./artifactDetail.css";
 
 export default function ArtifactDetail() {
   const [artifact, setArtifact] = useState(null);
@@ -191,7 +191,7 @@ export default function ArtifactDetail() {
                 <textarea
                   value={newComment}
                   onChange={(e) => setNewComment(e.target.value)}
-                  placeholder="Write your comment here"
+                  placeholder="Write your comment here..."
                   required
                 />
                 <button onClick={(e) => submitComment(e)}>

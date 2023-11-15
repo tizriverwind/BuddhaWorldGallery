@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/navbar/Navbar";
+import "./createArtifact.css";
 
 export default function CreateArtifact() {
   const [artifactData, setArtifactData] = useState({
@@ -44,9 +46,10 @@ export default function CreateArtifact() {
 
   return (
     <div className="container mt-5">
+      <Navbar />
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h1>Upload New Artifact</h1>
+          <h2>Upload New Artifact</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="dynasty">Dynasty</label>
             <div className="form-group mb-3">

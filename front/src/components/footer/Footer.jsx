@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
         <div className="footer-links_contact">
           <h4>Get in touch</h4>
-          <p>600 California St, San Francisco, CA</p>
+          <p>600 California St, San Francisco, California</p>
           <p>866-866866</p>
           <p>info@buddhaworldgallery.com</p>
         </div>

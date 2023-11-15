@@ -4,9 +4,14 @@
 
 body {
   margin: 0;
+  padding-top: 56px;
 }
 
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
   background-color: rgb(103, 77, 55);
   color: whitesmoke;
   display: flex;
@@ -14,6 +19,7 @@ body {
   align-items: stretch;
   gap: 2rem;
   padding: 0 1rem;
+  z-index: 1000;
 }
 
 .site-title {
@@ -38,10 +44,10 @@ body {
 }
 
 .nav li.active {
-  background-color: #621d1d;
+  background-color: rgb(53, 42, 28);
 }
 
 .nav li:hover {
   background-color: #f0e2e2;
-  text-decoration-color: aliceblue;
+  text-decoration-color: whitesmoke;
 }

@@ -7,7 +7,7 @@ import CreateArtifact from "./pages/CreateArtifact";
 import GalleryPage from "./pages/Gallery";
 import Footer from "./components/footer/Footer";
 import "./App.css";
-import Navbar from "./components/navbar/Navbar";
+//import Navbar from "./components/navbar/Navbar";
 
 export default function App() {
   return (
