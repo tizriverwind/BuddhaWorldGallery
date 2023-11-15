@@ -91,6 +91,7 @@ function MyMongoDB() {
 
     try {
       const result = await commentsCollection.insertOne(comment);
+      console.log(result);
       return result;
     } finally {
       console.log("db closing connection");
@@ -120,6 +121,24 @@ function MyMongoDB() {
         _id: new ObjectId(commentId),
       });
       return { deletedCount: result.deletedCount };
+    } finally {
+      console.log("db closing connection");
+      client.close();
+    }
+  };
+
+  myDB.updateComment = async (commentId, updateData) => {
+    const { client, db } = connect();
+    const commentsCollection = db.collection("Comments");
+
+    try {
+      const filter = { _id: new ObjectId(commentId) };
+      const update = { $set: updateData };
+      const result = await commentsCollection.updateOne(filter, update);
+      if (result.matchedCount > 0) {
+        return result;
+      }
+      return null;
     } finally {
       console.log("db closing connection");
       client.close();

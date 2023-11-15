@@ -48,14 +48,14 @@ export default function ArtifactDetail() {
 
   const submitComment = async (e) => {
     e.preventDefault();
-    if (newComment) {
+    if (newComment && artifactId) {
       try {
         const response = await fetch(`/api/buddha/id/${artifactId}/comments`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ text: newComment }),
+          body: JSON.stringify({ text: newComment, artifactId: artifactId }),
         });
 
         if (response.ok) {

@@ -75,8 +75,8 @@ router.delete("/api/buddha/id/:id", async function (req, res) {
 //createComment
 router.post("/api/buddha/id/:artifactId/comments", async (req, res) => {
   try {
-    const artifactlId = req.params.id;
-    const comment = { ...req.body, artifactlId };
+    const artifactId = req.params.artifactId;
+    const comment = { ...req.body, artifactId };
     console.log(comment);
     const result = await myDB.createComment(comment);
     res.status(201).json(result);
@@ -89,7 +89,7 @@ router.post("/api/buddha/id/:artifactId/comments", async (req, res) => {
 //getComments
 router.get("/api/buddha/id/:artifactId/comments", async (req, res) => {
   try {
-    const artifactId = req.params.id;
+    const artifactId = req.params.artifactId;
     const comments = await myDB.getCommentsByArtifactId(artifactId);
     console.log(comments);
     res.json(comments);
@@ -110,6 +110,19 @@ router.delete("/api/buddha/comments/:commentId", async (req, res) => {
     res.json({ message: "Comment deleted successfully" });
   } catch (err) {
     res.status(500).json({ error: "Unable to delete comment" });
+  }
+});
+
+//updateComment
+router.put("/api/buddha/comments/:commentId", async (req, res) => {
+  try {
+    const commentId = req.params.commentId;
+    const updateData = req.body;
+    const result = await myDB.updateComment(commentId, updateData);
+    res.status(200).json(result);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "Unable to update comment" });
   }
 });
 
