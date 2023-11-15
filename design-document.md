@@ -62,7 +62,7 @@ Upload artifact
 https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/upload.png
 
 About us
-https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/aboutUs.png
+https://raw.githubusercontent.com/tizriverwind/BuddhaWorldGallery/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/aboutUs.png
 
 Contact
 https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/contact.png
