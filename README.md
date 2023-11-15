@@ -9,11 +9,14 @@ Huiqin Hu & Xiaolin Liu
 ## Project links
 
 Please refer to the links below for more details on the project
-Deployed Site:
+Deployed Site: https://buddhaworldgallery-ar4v.onrender.com/
+
 Walkthrough Video:
+
 Slides: https://docs.google.com/presentation/d/e/2PACX-1vSb4RggmRkXw76P1Rx_Kq70ptaCaZxrPqxt4rqLPdXJSP0fls_F35BlBvAqJqE51zVl9NtKloT6a_yX/pub?start=false&loop=false&delayms=3000
 
-Design Document: ![designdoc](./design_document.md)
+Design Document can be found [here](./design-document.md)
+
 Class Link: https://johnguerra.co/classes/webDevelopment_fall_2023/
 
 ## Disclaimer
@@ -59,4 +62,4 @@ The "front" folder contains a vite react server. If you are in the root folder B
 npm run dev
 ```
 
-Which will start the frontend server, running on http://localhost:5174.
+Which will start the frontend server, running on http://localhost:5173.
