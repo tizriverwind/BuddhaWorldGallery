@@ -141,6 +141,7 @@ export default function ArtifactDetail() {
         />
         <div className="card-body">
           <h1 className="card-title">{artifact.name}</h1>
+          <p className="card-text">{artifact.dynasty}</p>
           <p className="card-text">{artifact.museum}</p>
 
           <div className="card-btn">

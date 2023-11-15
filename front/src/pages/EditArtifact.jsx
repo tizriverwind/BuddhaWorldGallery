@@ -72,7 +72,7 @@ export function EditArtifact() {
       <Navbar/>
       <div className="row justify-content-center">
         <div className="col-md-6">
-          <h1>Edit Artifact</h1>
+          <h2>Edit Artifact</h2>
           <form onSubmit={handleSubmit}>
             <label htmlFor="dynasty">Dynasty</label>
             <div className="form-group mb-3">

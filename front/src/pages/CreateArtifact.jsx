@@ -50,6 +50,7 @@ export default function CreateArtifact() {
       <div className="row justify-content-center">
         <div className="col-md-6">
           <h2>Upload New Artifact</h2>
+          <br/>
           <form onSubmit={handleSubmit}>
             <label htmlFor="dynasty">Dynasty</label>
             <div className="form-group mb-3">

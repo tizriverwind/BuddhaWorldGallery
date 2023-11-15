@@ -1,9 +1,11 @@
+
 .footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(163, 160, 171);
+  width: 100%;
 }
 
 .footer-links {

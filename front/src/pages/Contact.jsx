@@ -18,6 +18,8 @@ function Contact() {
 
         <p>Enlightenment may be just a message away!</p>
 
+        <br/>
+
         <form className="contact-form">
           <div className="form-group">
             <label htmlFor="name">Name:</label>
