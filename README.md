@@ -8,10 +8,9 @@ Huiqin Hu & Xiaolin Liu
 
 ## Project links
 
-Please refer to the links below for more details on the project
 Deployed Site: https://buddhaworldgallery-ar4v.onrender.com/
 
-Walkthrough Video:
+Walkthrough Video: https://youtu.be/HHam7Jaw86A
 
 Slides: https://docs.google.com/presentation/d/e/2PACX-1vSb4RggmRkXw76P1Rx_Kq70ptaCaZxrPqxt4rqLPdXJSP0fls_F35BlBvAqJqE51zVl9NtKloT6a_yX/pub?start=false&loop=false&delayms=3000
 
@@ -23,27 +22,51 @@ Class Link: https://johnguerra.co/classes/webDevelopment_fall_2023/
 
 Some data in this project are synthetic fictitious data and for educational and demonstration purposes only
 
-## Functionalities / How to Use
+## Screenshots
 
-###
+Main page: gallery
+![screenshots](./screenshots/home.png)
 
-- CRUD Operations on Gallery:
-  - Shows all the artifacts in our dataset. Navigation bar creates option to read up about us or contact us
-- Create an Artifact
-  - User is able to upload information on new artifacts
+Artifact Detail page
+![screenshots](./screenshots/detail.png)
 
-## Backend installation
+Upload artifact
+![screenshots](./screenshots/upload.png)
+
+About us
+![screenshots](./screenshots/aboutus.png)
+
+Contact
+![screenshots](./screenshots/contact.png)
+
+## Functionalities / Pages
+
+### Functionalities
+
+- CRUD Operations on Gallery -
+- CRUD Operations on Comment
+- Contact Us
+
+### Pages
+
+- Home Page/Gallery Page - users can browse our gallery database, search artifact, and upload an artifact
+- Artifact Detail Page - users can edit and delete artifact. They can also see the comment section that belongs to that artifact, as well as being able to edit, delete and upload comments
+- About Us: users can read up more about us
+- Contact: users can contact us
+
+## Installation
 
 To set up BuddhaWorldGallery, you will need the following:
 Clone the repository and then do below to run backend server:
 
 ```
 npm install
-npm install nodemon
-npm start
+cd front
+npm install
+npm run dev
+cd..
+npm run start
 ```
-
-Which will start the backend server, running on http://localhost:3000.
 
 ## Databse
 
@@ -54,12 +77,31 @@ Enter below string to import our database:
 mongoimport --db buddhaWorld --collection ListedArtifacts --file db/ListedArtifacts.json --jsonArray
 ```
 
-## Frontend installation
+## Dependencies:
 
-The "front" folder contains a vite react server. If you are in the root folder BuddhaWorldGallery, use `cd front` to enter our frontend folder. Enter below command to run our frontend server:
+### Backend server
 
 ```
-npm run dev
+"cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongodb": "^6.2.0",
+    "morgan": "~1.9.1",
 ```
 
-Which will start the frontend server, running on http://localhost:5173.
+### Frontend dependencies
+
+```
+"bootstrap": "^5.3.2",
+    "dotenv": "^16.3.1",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.9.1",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.48.2",
+    "react-router-dom": "^6.18.0"
+```
+
+## License
+
+This project is licensed under the MIT License.

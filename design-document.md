@@ -4,18 +4,7 @@
 
 BuddhaWorldGallery is an online website for art lovers to be able to browse, search, and upload buddha artifacts across the world. Users will be able to search artifacts based on the dynasty they like or the museums they like, upload new artifacts to our database, and leave comments on their favorite artifacts.
 
-## Functionalities and work division:
-
-Gallery MongoDB Collection: Huiqin Hu
-Comment Section MongoDB Collection: Huiqin Hu
-Search Feature: Huiqin Hu
-Frontend (CSS + HTML) + backend structure: Xiaolin Liu
-React Components: Xiaolin Liu
-React rendering: Xiaolin Liu & Huiqin Hu
-Deployment: Huiqin Hu
-
-User Profiles and Personas:
-
+## User Personas and User Stories
 
 1. The Art Enthusiast:
 
@@ -35,32 +24,23 @@ User Profiles and Personas:
 - Enjoys guided tours and simplified explanations of art pieces.
 - Appreciates user-friendly interfaces that enhance the learning experience.
 
-Functionalities:
-Database - @Huiqin Greta Hu:
-Individual pages for each Buddha head provide detailed information such as image and location, linking directly to the original museum or gallery page
-Post: users can share new buddha head artifacts by posting pictures, museum location, and other relevant information
-Edit: Users can modify their previously uploaded information to update details
-Delete: allow users to remove their postings
+## Functionalities and work division:
 
-Filter and Like - @Huiqin Greta Hu and @Xiaolin Liu
-Like: users can give thumbs up to their favorite buddha head artifacts
-Filter: users can view buddha head artifacts based on filtering by geographic location, time period, or museum name
+Gallery MongoDB Collection: Huiqin Hu
+Comment Section MongoDB Collection: Huiqin Hu
+Search Feature: Huiqin Hu
+Frontend (CSS + HTML) + backend structure: Xiaolin Liu
+React Components: Xiaolin Liu
+React rendering: Xiaolin Liu & Huiqin Hu
+Deployment: Huiqin Hu
 
-Comment Section Interactions (since we are not implementing user authentication / user login, we are treating all users as one user) - @Xiaolin Liu
-Comment: Users can leave comment on their favorite artifacts
-Edit: Users can modify their previously posted comment to update details
-Delete: users can delete their comment
-Like: users can give thumbs up to a comment they like
+## Mockups:
 
-Frontend CSS / page design - @Xiaolin Liu
-
-Mockups:
 Main page: gallery
 ![mockup](./mockup/gallery.png)
 
 Image detail page
 ![mockup](./mockup/detailPg.png)
-
 
 Upload artifact
 ![mockup](./mockup/upload.png)
@@ -73,4 +53,3 @@ Contact
 
 Footer
 ![mockup](./mockup/footer.png)
-
