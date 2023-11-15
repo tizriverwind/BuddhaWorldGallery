@@ -6,10 +6,12 @@ BuddhaWorldGallery is an online website for art lovers to be able to browse, sea
 
 ## Functionalities and work division:
 
-Gallery MongoDB Collection: Huiqin Hu:
-Comment Section MongoDB Collection: Xiaolin Liu
+Gallery MongoDB Collection: Huiqin Hu
+Comment Section MongoDB Collection: Huiqin Hu
 Search Feature: Huiqin Hu
-CSS: Xiaolin Liu
+Frontend (CSS + HTML) + backend structure: Xiaolin Liu
+React Components: Xiaolin Liu
+React rendering: Xiaolin Liu & Huiqin Hu
 Deployment: Huiqin Hu
 
 User Profiles and Personas:
