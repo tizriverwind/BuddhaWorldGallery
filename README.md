@@ -43,9 +43,11 @@ Contact
 
 ### Functionalities
 
-- CRUD Operations on Gallery -
+- CRUD Operations on Gallery
 - CRUD Operations on Comment
-- Contact Us
+- Search Feature on Gallery
+- React hook components
+- Contact Us Form
 
 ### Pages
 
