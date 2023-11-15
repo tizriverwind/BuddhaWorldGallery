@@ -1,4 +1,4 @@
-//import "dotenv/config";
+import "dotenv/config";
 import { MongoClient, ObjectId } from "mongodb";
 
 function MyMongoDB() {
@@ -6,6 +6,7 @@ function MyMongoDB() {
   const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
   function connect() {
+    console.log("Connecting to", uri.slice(0, 20));
     const client = new MongoClient(uri);
     const db = client.db("buddhaWorld");
     return { client, db };
