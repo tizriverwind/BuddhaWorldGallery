@@ -16,6 +16,7 @@ Deployment: Huiqin Hu
 
 User Profiles and Personas:
 
+
 1. The Art Enthusiast:
 
 - Looks for a visually compelling and informative experience.
