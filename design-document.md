@@ -53,20 +53,21 @@ Frontend CSS / page design - @Xiaolin Liu
 
 Mockups:
 Main page: gallery
-https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/aboutUs.png
+![mockup](./mockup/gallery.png)
 
 Image detail page
-https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/detailPg.png
+![mockup](./mockup/detailPg.png)
+
 
 Upload artifact
-https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/upload.png
+![mockup](./mockup/upload.png)
 
 About us
-https://raw.githubusercontent.com/tizriverwind/BuddhaWorldGallery/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/aboutUs.png
+![mockup](./mockup/aboutUs.png)
 
 Contact
-https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/contact.png
+![mockup](./mockup/contact.png)
 
 Footer
-https://github.com/tizriverwind/BuddhaWorldGallery/blob/82de8d478eab8a43c5542e981702c20597e9a13e/mockup/footer.png
+![mockup](./mockup/footer.png)
 
