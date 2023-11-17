@@ -5,6 +5,8 @@ function MyMongoDB() {
   const myDB = {};
   const uri = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
+  console.log("mongo_url", uri.slice(0, 10));
+
   function connect() {
     console.log("Connecting to", uri.slice(0, 20));
     const client = new MongoClient(uri);
