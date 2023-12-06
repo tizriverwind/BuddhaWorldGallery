@@ -89,6 +89,20 @@ Enter below string to import our database:
 mongoimport --db buddhaWorld --collection ListedArtifacts --file db/ListedArtifacts.json --jsonArray
 ```
 
+To set up your own local environment variables, follow these steps:
+
+1. Create a new file named .env in the root directory of the project.
+
+2. Open the .env file in a text editor.
+
+3. Add the following variables to the file:
+```
+MONGOMONGODB_URI=your_mongodb_uri
+```
+Replace your_mongodb_uri with the URI for your MongoDB database.
+4. Save and close the .env file.
+5. When running the project locally, the environment variables in the .env file will be automatically loaded.
+
 ## Dependencies:
 
 ### Backend server
